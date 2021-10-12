@@ -162,7 +162,7 @@ header {
     padding-left: 14.5%;
 }
 
-/*Quote carousel loader animation*/
+/*QUOTE LOADER*/
 .loader {
     border: 10px solid #f3f3f3;
     border-top: 10px solid #C271FF;
@@ -172,11 +172,35 @@ header {
     animation: spin 2s linear infinite;
     margin: auto;
 }
-/*==============================*/
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+/*==============================*/
+
+
+
+.custom-carousel-override .carousel-inner .carousel-item.active,
+.custom-carousel-override .carousel-inner .carousel-item-next,
+.custom-carousel-override .carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+.custom-carousel-override .carousel-inner .carousel-item-right.active,
+.custom-carousel-override .carousel-inner .carousel-item-next {
+  transform: translateX(25%);
+}
+
+.custom-carousel-override .carousel-inner .carousel-item-left.active, 
+.custom-carousel-override .carousel-inner .carousel-item-prev {
+  transform: translateX(-25%);
+}
+  
+.custom-carousel-override .carousel-inner .carousel-item-right,
+.custom-carousel-override .carousel-inner .carousel-item-left{ 
+  transform: translateX(0);
+  
 }
 
 @media (max-width: 1071px)
