@@ -67,7 +67,7 @@ window.onload = function main() {
             $("#card-item-container").append(`
             ${(dataItem.id == 1) ? ifFirst : ifNotFirst}
                 <div class="card w-75 mr-4 border-0 pl-sm-4 pl-md-1" style="width: 18rem;">
-                <div class="card-header card-header-custom" id="card-header-1">
+                <div class="card-header card-header-custom" id="card-header-${dataItem.id}">
                     <img class="play-image" src="./images/play.png">
                 </div>
                 <div class="card-body p-2 p-md-3">
@@ -90,28 +90,10 @@ window.onload = function main() {
                 </div>
             </div>
             `);
+            $(`#card-header-${dataItem.id}`).css("background-image", `url(${dataItem.thumb_url})`)
         };
     }
-    
-    /* carousel item override */
-
-    $('.carousel .carousel-item').each(function(){
-        var next = $(this).next();
-        if (!next.length) {
-        next = $(this).siblings(':first');
-        }
-        next.children(':first-child').clone().appendTo($(this));
-        
-        for (var i=0;i<2;i++) {
-            next=next.next();
-            if (!next.length) {
-                next = $(this).siblings(':first');
-            }
-            
-            next.children(':first-child').clone().appendTo($(this));
-        }
-    });
 
     getItems("quotes");
-    /*getItems("popular-tutorials");*/
+    getItems("popular-tutorials");
 }
