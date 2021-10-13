@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <!-- Meta's-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet"> 
+
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Coiny&display=swap" rel="stylesheet">
+        <!--jQuery-->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <!--jQuery Javascript-->
+        <script src="scripts.js"></script>
+        <!-- Bootstrap Javascript & stylesheet-->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="./icons/fonts-style.css">
+        <link rel="stylesheet" href="./styles.css">
+        <!-- OTHER -->
+        <title>SmileSchool - Get Schooled</title>
+        <link rel="icon" type="image/png" href="./images/favicon.png"/>
+    </head>
+    <body>
+        <header id="courses-header" class="pb-1">
+            <!-- NAVIGATION -->
+            <nav class="container navbar navbar-expand-md d-flex flex-column flex-md-row pb-2">
+                <div class="navbar-brand container-fluid pl-md-5">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynav">
+                        <span class="holberton_school-icon-menu"></span>
+                    </button>
+                    <div class="d-flex align-items-center flex-column flex-md-row mx-auto mx-md-0 pr-4">
+                        <img src="images/smile_off.png" class="p-2" width="50" height="50">
+                        <img src="images/logo.png" class="p-2" width="160" height="50">
+                    </div>
+                </div>
+                <div>
+                    <div class="collapse navbar-collapse" id="mynav">
+                        <ul class="navbar-nav d-flex flex-column flex-md-row pr-md-5">
+                            <li class="p-sm-2 p-md-3 mx-auto nav-item">
+                                <a class="text-light font-weight-bold nav-link accent-colors border-bottom" href="#">COURSES</a>
+                            </li>
+                            <li class="p-sm-2 p-md-3 mx-auto nav-item">
+                                <a class="text-light font-weight-bold nav-link" href="#">PRICING</a>
+                            </li>
+                            <li class="p-sm-2 p-md-3  mx-auto nav-item">
+                                <a class="text-light font-weight-bold nav-link" href="#">LOGIN</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- HERO TEXT -->
+            <div class="px-4 py-1 my-5 text-center">
+                <h1 id="courses-h1" class="display-5 text-white pb-5 d-none d-sm-block"><< Don't cry because it's over.<br>
+                    <span class="accent-colors">Smile</span> because it happened. >>
+                </h1>
+            </div>
+        </header>
+        <main>
+            <section id="search-section" class="pb-5 pt-5 text-center">
+                <div class="d-flex flex-wrap flex-column flex-md-row justify-content-center">
+                    <div class="mx-sm-auto mx-md-3 d-flex flex-column">
+                        <h6 class="text-left text-light font-weight-bold">KEYWORDS</h6>
+                        <div id="input-group-override" class="input-group input-group-lg mb-1">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text holberton_school-icon-search_1 text-light border-secondary" id="basic-addon1"></span>
+                            </div>
+                            <input type="search" id="input-custom" class="form-control border-left-0 border-secondary" placeholder="Search by keywords" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row mx-auto mx-lg-0">
+                        <div class="dropdown px-3">
+                            <div class="d-flex flex-column justify-content-between">
+                                <h6 class="text-left text-light font-weight-bold">TOPIC</h6>
+                                <button class="btn btn-secondary btn-lg dropdown-toggle font-weight-light text-left" type="button" id="dropdownone" data-toggle="dropdown">
+                                    <span class="text-left">Novice</span><span class="m-5 p-5 carot-spacing"></span>
+                                </button>
+                                <div class="dropdown-menu dropdown-custom rounded-0">
+                                    <a class="dropdown-item" href="#">Novice</a>
+                                    <a class="dropdown-item" href="#">Intermediate</a>
+                                    <a class="dropdown-item" href="#">Expert</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown px-3">
+                            <div class="d-flex flex-column">
+                                <h6 class="text-left text-light font-weight-bold">SORT BY</h6>
+                                <button class="btn btn-secondary btn-lg dropdown-toggle font-weight-light text-left" type="button" id="dropdowntwo" data-toggle="dropdown">
+                                    <span class="text-left">Most Popular</span><span class="m-5 p-4 carot-spacing"></span>
+                                </button>
+                                <div class="dropdown-menu dropdown-custom">
+                                    <a class="dropdown-item" href="#">Most Popular</a>
+                                    <a class="dropdown-item" href="#">Most Recent</a>
+                                    <a class="dropdown-item" href="#">Most Viewed</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h6 id="video-count"  class="pt-5">11 videos</h6>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <!-- CARD 1-->
+                    <div class="card border-0 m-5" style="width: 18rem;">
+                        <div class="card-header card-header-custom" id="card-header-1">
+                            <img class="play-image" src="./images/play.png">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold pt-1">Diagonal Smile</h5>
+                            <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex flex-row pt-3">
+                                <img class="rounded-circle" src="./images/profile_1.jpg" width="50">
+                                <p class="accent-colors pl-2 my-auto font-weight-bold">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex flex-row text-center">
+                                <div class="d-flex flex-row">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_off.png" class="mr-1 mt-1" width="15" height="15">
+                                </div>
+                                <p class="mx-auto accent-colors font-weight-bold">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD 2 -->
+                    <div class="card border-0 m-5" style="width: 18rem;">
+                        <div class="card-header card-header-custom" id="card-header-2">
+                            <img class="play-image" src="./images/play.png">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title font-weight-bold pt-1">Sad Smile</h5>
+                            <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex flex-row pt-3">
+                                <img class="rounded-circle" src="./images/profile_1.jpg" width="50">
+                                <p class="accent-colors pl-2 my-auto font-weight-bold">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex flex-column flex-sm-row text-center">
+                                <div class="mr-5 d-flex flex-row">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_off.png" class="mr-1 mt-1" width="15" height="15">
+                                </div>
+                                <p class="mx-auto accent-colors font-weight-bold p-0 m-0">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD 3 -->
+                    <div class="card border-0 m-5" style="width: 18rem;">
+                        <div class="card-header card-header-custom" id="card-header-3">
+                            <img class="play-image" src="./images/play.png">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title font-weight-bold">Natural Smile</h5>
+                            <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex flex-row pt-3">
+                                <img class="rounded-circle" src="./images/profile_1.jpg" width="50">
+                                <p class="accent-colors pl-2 my-auto font-weight-bold">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex flex-column flex-lg-row text-lg-center">
+                                <div class="mr-5 d-flex flex-row">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_off.png" class="mr-1 mt-1" width="15" height="15">
+                                </div>
+                                <p class="mx-auto accent-colors font-weight-bold p-0 m-0">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD 4 -->
+                    <div class="card border-0 m-5" style="width: 18rem;">
+                        <div class="card-header card-header-custom" id="card-header-4">
+                            <img class="play-image" src="./images/play.png">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title font-weight-bold">Happy Smile</h5>
+                            <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex flex-row pt-3">
+                                <img class="rounded-circle" src="./images/profile_1.jpg" width="50">
+                                <p class="accent-colors pl-2 my-auto font-weight-bold">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex flex-column flex-lg-row text-lg-center">
+                                <div class="mr-5 d-flex flex-row">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_off.png" class="mr-1 mt-1" width="15" height="15">
+                                </div>
+                                <p class="mx-auto accent-colors font-weight-bold p-0 m-0">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD 1-->
+                    <div class="card border-0 m-5" style="width: 18rem;">
+                        <div class="card-header card-header-custom" id="card-header-1">
+                            <img class="play-image" src="./images/play.png">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold pt-1">Diagonal Smile</h5>
+                            <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex flex-row pt-3">
+                                <img class="rounded-circle" src="./images/profile_1.jpg" width="50">
+                                <p class="accent-colors pl-2 my-auto font-weight-bold">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex flex-row text-center">
+                                <div class="d-flex flex-row">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_off.png" class="mr-1 mt-1" width="15" height="15">
+                                </div>
+                                <p class="mx-auto accent-colors font-weight-bold">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD 2 -->
+                    <div class="card border-0 m-5" style="width: 18rem;">
+                        <div class="card-header card-header-custom" id="card-header-2">
+                            <img class="play-image" src="./images/play.png">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title font-weight-bold pt-1">Sad Smile</h5>
+                            <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex flex-row pt-3">
+                                <img class="rounded-circle" src="./images/profile_1.jpg" width="50">
+                                <p class="accent-colors pl-2 my-auto font-weight-bold">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex flex-column flex-sm-row text-center">
+                                <div class="mr-5 d-flex flex-row">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_off.png" class="mr-1 mt-1" width="15" height="15">
+                                </div>
+                                <p class="mx-auto accent-colors font-weight-bold p-0 m-0">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD 3 -->
+                    <div class="card border-0 m-5" style="width: 18rem;">
+                        <div class="card-header card-header-custom" id="card-header-3">
+                            <img class="play-image" src="./images/play.png">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title font-weight-bold">Natural Smile</h5>
+                            <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex flex-row pt-3">
+                                <img class="rounded-circle" src="./images/profile_1.jpg" width="50">
+                                <p class="accent-colors pl-2 my-auto font-weight-bold">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex flex-column flex-lg-row text-lg-center">
+                                <div class="mr-5 d-flex flex-row">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_off.png" class="mr-1 mt-1" width="15" height="15">
+                                </div>
+                                <p class="mx-auto accent-colors font-weight-bold p-0 m-0">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD 4 -->
+                    <div class="card border-0 m-5" style="width: 18rem;">
+                        <div class="card-header card-header-custom" id="card-header-4">
+                            <img class="play-image" src="./images/play.png">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title font-weight-bold">Happy Smile</h5>
+                            <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex flex-row pt-3">
+                                <img class="rounded-circle" src="./images/profile_1.jpg" width="50">
+                                <p class="accent-colors pl-2 my-auto font-weight-bold">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex flex-column flex-lg-row text-lg-center">
+                                <div class="mr-5 d-flex flex-row">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_off.png" class="mr-1 mt-1" width="15" height="15">
+                                </div>
+                                <p class="mx-auto accent-colors font-weight-bold p-0 m-0">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- CARD 1-->
+                     <div class="card border-0 m-5" style="width: 18rem;">
+                        <div class="card-header card-header-custom" id="card-header-1">
+                            <img class="play-image" src="./images/play.png">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold pt-1">Diagonal Smile</h5>
+                            <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex flex-row pt-3">
+                                <img class="rounded-circle" src="./images/profile_1.jpg" width="50">
+                                <p class="accent-colors pl-2 my-auto font-weight-bold">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex flex-row text-center">
+                                <div class="d-flex flex-row">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_off.png" class="mr-1 mt-1" width="15" height="15">
+                                </div>
+                                <p class="mx-auto accent-colors font-weight-bold">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD 2 -->
+                    <div class="card border-0 m-5" style="width: 18rem;">
+                        <div class="card-header card-header-custom" id="card-header-2">
+                            <img class="play-image" src="./images/play.png">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title font-weight-bold pt-1">Sad Smile</h5>
+                            <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex flex-row pt-3">
+                                <img class="rounded-circle" src="./images/profile_1.jpg" width="50">
+                                <p class="accent-colors pl-2 my-auto font-weight-bold">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex flex-column flex-sm-row text-center">
+                                <div class="mr-5 d-flex flex-row">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_off.png" class="mr-1 mt-1" width="15" height="15">
+                                </div>
+                                <p class="mx-auto accent-colors font-weight-bold p-0 m-0">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD 3 -->
+                    <div class="card border-0 m-5" style="width: 18rem;">
+                        <div class="card-header card-header-custom" id="card-header-3">
+                            <img class="play-image" src="./images/play.png">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title font-weight-bold">Natural Smile</h5>
+                            <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex flex-row pt-3">
+                                <img class="rounded-circle" src="./images/profile_1.jpg" width="50">
+                                <p class="accent-colors pl-2 my-auto font-weight-bold">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex flex-column flex-lg-row text-lg-center">
+                                <div class="mr-5 d-flex flex-row">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
+                                    <img src="./images/star_off.png" class="mr-1 mt-1" width="15" height="15">
+                                </div>
+                                <p class="mx-auto accent-colors font-weight-bold p-0 m-0">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0 m-5" id="div-spacee" style="width: 18rem;">
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer-section" class="text-center p-5 mt-5">
+            <div class="d-flex flex-column flex-md-row">
+                <div class="container my-auto pb-5 order-1">
+                    <img src="images/smile_off.png" class="p-2" width="60" height="50">
+                    <img src="images/logo.png" class="" width="120" height="30">
+                </div>
+                <div class="container pt-md-5 mt-md-5 order-md-2 order-sm-3">
+                    <p class="text-secondary">©smileschool 2020</p>
+                </div> 
+                <div id="footer-icons" class="container my-auto align-self-center pb-5 order-md-3 order-sm-2">
+                    <span class="holberton_school-icon-ic_facebook p-2 text-light"></span>
+                    <span class="holberton_school-icon-ic_twitter  p-2 text-light"></span>
+                    <span class="holberton_school-icon-ic_instagram p-2 text-light"></span>
+                </div>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
