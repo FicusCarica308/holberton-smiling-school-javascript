@@ -87,12 +87,12 @@ $( document ).ready(function() {
 
     function createVideo(type) {
         return function newVideo(dataItem) {
-            const ifFirst = `<div class="carousel-item active" id="video-${dataItem.id}">`;
-            const ifNotFirst = `<div class="carousel-item" id="video-${dataItem.id}">`;
+            const ifFirst = `<div class="carousel-item active" id="${type}-video-${dataItem.id}">`;
+            const ifNotFirst = `<div class="carousel-item" id="${type}-video-${dataItem.id}">`;
             $(`#${type}`).append(`
             ${(dataItem.id == 1) ? ifFirst : ifNotFirst}
                 <div class="card w-75 mr-4 border-0 pl-sm-4 pl-md-1" style="width: 18rem;">
-                <div class="card-header card-header-custom" id="card-header-${dataItem.id}">
+                <div class="card-header card-header-custom" id="${type}-card-header-${dataItem.id}">
                     <img class="play-image" src="./images/play.png">
                 </div>
                 <div class="card-body p-2 p-md-3">
@@ -103,7 +103,7 @@ $( document ).ready(function() {
                         <p class="accent-colors pl-2 my-auto font-weight-bold">${dataItem.author}</p>
                     </div>
                     <div class="d-flex flex-row text-center">
-                        <div class="mr-5 d-flex w-50 flex-row" id="stars-video-${dataItem.id}">
+                        <div class="mr-5 d-flex w-50 flex-row" id="${type}-stars-video-${dataItem.id}">
                         </div>
                         <p class="mx-auto accent-colors font-weight-bold">8 min</p>
                     </div>
@@ -117,9 +117,9 @@ $( document ).ready(function() {
                 } else {
                     starStatus = "star_off.png";
                 }
-                $(`#stars-video-${dataItem.id}`).append(`<img src="./images/${starStatus}" class="mr-1 mt-1" width="15" height="15">`)
+                $(`#${type}-stars-video-${dataItem.id}`).append(`<img src="./images/${starStatus}" class="mr-1 mt-1" width="15" height="15">`)
             } 
-            $(`#card-header-${dataItem.id}`).css("background-image", `url("${dataItem.thumb_url}")`)
+            $(`#${type}-card-header-${dataItem.id}`).css("background-image", `url("${dataItem.thumb_url}")`)
         };
     }
     
