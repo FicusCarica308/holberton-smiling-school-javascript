@@ -1,11 +1,31 @@
-window.onload = function main() {
+$( document ).ready(function() {
 
-    function displayLoader(loadStatus) {
+    /* OTHER FUNCTIONS */
+    function displayLoader(loadStatus, type) {
         if (loadStatus == true) {
-            $("#quote-container").wrap('<div class="loader"></div>');
+            $(`#${type}`).wrap('<div class="loader"></div>');
         } else {
-            $("#quote-container").unwrap();
+            $(`#${type}`).unwrap();
         }
+    }
+
+    function customCardByCard(dataLength) {
+        $('.card-by-card .carousel-inner .carousel-item').each(function(){
+            var next = $(this).next();
+            if (!next.length) {
+            next = $(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo($(this));
+            
+            for (var i=0;i<2;i++) {
+                next=next.next();
+                if (!next.length) {
+                    next = $(this).siblings(':first');
+                }
+                
+                next.children(':first-child').clone().appendTo($(this));
+            }
+        });
     }
 
     function getItems(type) {
@@ -16,7 +36,7 @@ window.onload = function main() {
         } else if (type == "popular-tutorials" || type == "latest-videos") {
             createElement = createVideo();
         }
-        displayLoader(true);
+        displayLoader(true, type);
         $.ajax({
             url: url,
             method: "GET",
@@ -28,7 +48,10 @@ window.onload = function main() {
                 for (item in data) {
                     createElement(data[item]);
                 }
-                displayLoader(false);
+                if (type == "popular-tutorials" || type == "latest-videos") {
+                    customCardByCard();
+                }
+                displayLoader(false, type);
             }, 0800);
         })
         .fail(() => {
@@ -36,13 +59,15 @@ window.onload = function main() {
         })
     }
 
+    /*=======================================================================*/
+
     /*DYNAMIC LOAD OF QUOTE CAROSEL*/
 
     function createQuote() {
         return function newQuote(dataItem) {
             const ifFirst = `<div class="carousel-item active" id="quote-${dataItem.id}">`;
             const ifNotFirst = `<div class="carousel-item" id="quote-${dataItem.id}">`;
-            $("#quote-container").append(`
+            $("#quotes").append(`
             ${(dataItem.id == 1) ? ifFirst : ifNotFirst}
                 <div class="d-flex justify-content-center flex-column flex-md-row align-items-center">
                     <img class="rounded-circle d-block p-5" src="${dataItem.pic_url}" alt="First slide" width="250" height="250">
@@ -64,36 +89,41 @@ window.onload = function main() {
         return function newVideo(dataItem) {
             const ifFirst = `<div class="carousel-item active" id="video-${dataItem.id}">`;
             const ifNotFirst = `<div class="carousel-item" id="video-${dataItem.id}">`;
-            $("#card-item-container").append(`
+            $("#popular-tutorials").append(`
             ${(dataItem.id == 1) ? ifFirst : ifNotFirst}
                 <div class="card w-75 mr-4 border-0 pl-sm-4 pl-md-1" style="width: 18rem;">
                 <div class="card-header card-header-custom" id="card-header-${dataItem.id}">
                     <img class="play-image" src="./images/play.png">
                 </div>
                 <div class="card-body p-2 p-md-3">
-                    <h5 class="card-title font-weight-bold pt-1">Diagonal Smile</h5>
-                    <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                    <h5 class="card-title font-weight-bold pt-1">${dataItem.title}</h5>
+                    <p class="card-text text-secondary">${dataItem["sub-title"]}</p>
                     <div class="d-flex flex-row pt-3">
-                        <img class="rounded-circle" src="./images/profile_1.jpg" width="50">
-                        <p class="accent-colors pl-2 my-auto font-weight-bold">Phillip Massey</p>
+                        <img class="rounded-circle" src="${dataItem.author_pic_url}" width="50">
+                        <p class="accent-colors pl-2 my-auto font-weight-bold">${dataItem.author}</p>
                     </div>
                     <div class="d-flex flex-row text-center">
-                        <div class="mr-5 d-flex w-50 flex-row">
-                            <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
-                            <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
-                            <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
-                            <img src="./images/star_on.png" class="mr-1 mt-1" width="15" height="15">
-                            <img src="./images/star_off.png" class="mr-1 mt-1" width="15" height="15">
+                        <div class="mr-5 d-flex w-50 flex-row" id="stars-video-${dataItem.id}">
                         </div>
                         <p class="mx-auto accent-colors font-weight-bold">8 min</p>
                     </div>
                 </div>
             </div>
             `);
-            $(`#card-header-${dataItem.id}`).css("background-image", `url(${dataItem.thumb_url})`)
+            let starStatus = "";
+            for (let i = 0; i <= 4; i++) {
+                if (i < dataItem.star) {
+                    starStatus = "star_on.png";
+                } else {
+                    starStatus = "star_off.png";
+                }
+                $(`#stars-video-${dataItem.id}`).append(`<img src="./images/${starStatus}" class="mr-1 mt-1" width="15" height="15">`)
+            } 
+            $(`#card-header-${dataItem.id}`).css("background-image", `url("${dataItem.thumb_url}")`)
         };
     }
-
+    
+    /* MAIN */
     getItems("quotes");
     getItems("popular-tutorials");
-}
+});
