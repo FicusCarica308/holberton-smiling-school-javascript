@@ -9,8 +9,8 @@ $( document ).ready(function() {
         }
     }
 
-    function customCardByCard(dataLength) {
-        $('.card-by-card .carousel-inner .carousel-item').each(function(){
+    function customCardByCard(type) {
+        $(`.${type}-card-by-card .carousel-inner .carousel-item`).each(function(){
             var next = $(this).next();
             if (!next.length) {
             next = $(this).siblings(':first');
@@ -34,7 +34,7 @@ $( document ).ready(function() {
         if (type == "quotes"){
             createElement = createQuote();
         } else if (type == "popular-tutorials" || type == "latest-videos") {
-            createElement = createVideo();
+            createElement = createVideo(type);
         }
         displayLoader(true, type);
         $.ajax({
@@ -49,7 +49,7 @@ $( document ).ready(function() {
                     createElement(data[item]);
                 }
                 if (type == "popular-tutorials" || type == "latest-videos") {
-                    customCardByCard();
+                    customCardByCard(type);
                 }
                 displayLoader(false, type);
             }, 0800);
@@ -85,11 +85,11 @@ $( document ).ready(function() {
 
     /*DYNAMIC LOAD OF POPULAR TUTORIALS CAROSEL*/
 
-    function createVideo() {
+    function createVideo(type) {
         return function newVideo(dataItem) {
             const ifFirst = `<div class="carousel-item active" id="video-${dataItem.id}">`;
             const ifNotFirst = `<div class="carousel-item" id="video-${dataItem.id}">`;
-            $("#popular-tutorials").append(`
+            $(`#${type}`).append(`
             ${(dataItem.id == 1) ? ifFirst : ifNotFirst}
                 <div class="card w-75 mr-4 border-0 pl-sm-4 pl-md-1" style="width: 18rem;">
                 <div class="card-header card-header-custom" id="card-header-${dataItem.id}">
@@ -126,4 +126,5 @@ $( document ).ready(function() {
     /* MAIN */
     getItems("quotes");
     getItems("popular-tutorials");
+    getItems("latest-videos")
 });
