@@ -12,6 +12,7 @@ Contains original work plus additional dynamic loading supported by vanilla java
 * homepage.html iterations
 * courses.html iterations
 * scripts.js - This is a new file that contains all dynamic loading functions for the above webpages.
+* styles.css - This css file contains css for all three webpages that isnt covered by bootstrap.
 
 ## Authors
 Manuel Enrique Figueroa - [Github](https://github.com/FicusCarica308)
