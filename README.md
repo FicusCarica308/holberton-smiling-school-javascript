@@ -8,9 +8,9 @@ Contains original work plus additional dynamic loading supported by vanilla java
 
 ## Files:
 * Each file here is built in section by section iterations each in there own file labeled with a 0 or othe # at the beginning
-* pricing.html iterations
-* homepage.html iterations
-* courses.html iterations
+* pricing.html iterations - final iteration doesnt have a number
+* homepage.html iterations - final iteration doesnt have a number
+* courses.html iterations - final iteration doesnt have a number
 * scripts.js - This is a new file that contains all dynamic loading functions for the above webpages.
 * styles.css - This css file contains css for all three webpages that isnt covered by bootstrap.
 
